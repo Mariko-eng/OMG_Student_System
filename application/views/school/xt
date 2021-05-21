@@ -1,0 +1,182 @@
+<div class="form-group row">
+                            <label for="english_degree" class="col-md-2">English Degree <?= form_error('english_degree', '<span style=" color:red;">', '</span>') ?></label>
+                            <select required <?= $subtitle == 'view' ? 'disabled' : '' ?> class="col-md-10" name="english_degree" id="english_degree" multiple>
+                                <option value="A" <?= set_select('english_degree', 'A', 
+                                isset($row) && isset($row['english_degree']) && in_array('A', $row['english_degree']) ? true : '')  ?>>
+                                A</option>
+                                <option value="B" <?= set_select('english_degree', 'B', 
+                                isset($row) && isset($row['english_degree']) && in_array('B', $row['english_degree']) ? true : '')  ?>>
+                                B</option>
+                                <option value="C" <?= set_select('english_degree', 'C', 
+                                isset($row) && isset($row['english_degree']) && in_array('C', $row['english_degree']) ? true : '')  ?>>
+                                C</option>
+                                <option value="D" <?= set_select('english_degree', 'D', 
+                                isset($row) && isset($row['english_degree']) && in_array('D', $row['english_degree']) ? true : '')  ?>>
+                                D</option>
+                                <option value="E" <?= set_select('english_degree', 'E', 
+                                isset($row) && isset($row['english_degree']) && in_array('E', $row['english_degree']) ? true : '')  ?>>
+                                E</option>
+                                <option value="F" <?= set_select('english_degree', 'F', 
+                                isset($row) && isset($row['english_degree']) && in_array('F', $row['english_degree']) ? true : '')  ?>>
+                                F</option>
+                                <option value="OTHER"  <?= set_select('english_degree', 'Other', 
+                                isset($row) && isset($row['english_degree']) && in_array('Other', $row['english_degree']) ? true : '')  ?>>
+                                Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <label for="math_degree" class="col-md-2">Math Degree <?= form_error('math_degree', '<span style=" color:red;">', '</span>') ?></label>
+                            <select required <?= $subtitle == 'view' ? 'disabled' : '' ?> class="col-md-10" name="math_degree" id="math_degree" multiple>
+                                <option value="A" <?= set_select('math_degree', 'A', 
+                                isset($row) && isset($row['math_degree']) && in_array('A', $row['math_degree']) ? true : '')  ?>>
+                                A</option>
+                                <option value="B" <?= set_select('math_degree', 'B', 
+                                isset($row) && isset($row['math_degree']) && in_array('B', $row['math_degree']) ? true : '')  ?>>
+                                B</option>
+                                <option value="C" <?= set_select('math_degree', 'C', 
+                                isset($row) && isset($row['math_degree']) && in_array('C', $row['math_degree']) ? true : '')  ?>>
+                                C</option>
+                                <option value="D" <?= set_select('math_degree', 'D', 
+                                isset($row) && isset($row['math_degree']) && in_array('D', $row['math_degree']) ? true : '')  ?>>
+                                D</option>
+                                <option value="E" <?= set_select('math_degree', 'E', 
+                                isset($row) && isset($row['math_degree']) && in_array('E', $row['math_degree']) ? true : '')  ?>>
+                                E</option>
+                                <option value="F" <?= set_select('math_degree', 'F', 
+                                isset($row) && isset($row['math_degree']) && in_array('F', $row['math_degree']) ? true : '')  ?>>
+                                F</option>
+                                <option value="OTHER"  <?= set_select('math_degree', 'Other', 
+                                isset($row) && isset($row['math_degree']) && in_array('Other', $row['math_degree']) ? true : '')  ?>>
+                                Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <label for="biology_degree" class="col-md-2">Biology Degree <?= form_error('biology_degree', '<span style=" color:red;">', '</span>') ?></label>
+                            <select required <?= $subtitle == 'view' ? 'disabled' : '' ?> class="col-md-10" name="biology_degree" id="biology_degree" multiple>
+                                <option value="A" <?= set_select('biology_degree', 'A', 
+                                isset($row) && isset($row['biology_degree']) && in_array('A', $row['biology_degree']) ? true : '')  ?>>
+                                A</option>
+                                <option value="B" <?= set_select('biology_degree', 'B', 
+                                isset($row) && isset($row['biology_degree']) && in_array('B', $row['biology_degree']) ? true : '')  ?>>
+                                B</option>
+                                <option value="C" <?= set_select('biology_degree', 'C', 
+                                isset($row) && isset($row['biology_degree']) && in_array('C', $row['biology_degree']) ? true : '')  ?>>
+                                C</option>
+                                <option value="D" <?= set_select('biology_degree', 'D', 
+                                isset($row) && isset($row['biology_degree']) && in_array('D', $row['biology_degree']) ? true : '')  ?>>
+                                D</option>
+                                <option value="E" <?= set_select('biology_degree', 'E', 
+                                isset($row) && isset($row['biology_degree']) && in_array('E', $row['biology_degree']) ? true : '')  ?>>
+                                E</option>
+                                <option value="F" <?= set_select('biology_degree', 'F', 
+                                isset($row) && isset($row['biology_degree']) && in_array('F', $row['biology_degree']) ? true : '')  ?>>
+                                F</option>
+                                <option value="OTHER"  <?= set_select('biology_degree', 'Other', 
+                                isset($row) && isset($row['biology_degree']) && in_array('Other', $row['biology_degree']) ? true : '')  ?>>
+                                Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <label for="physics_degree" class="col-md-2">Physics Degree <?= form_error('physics_degree', '<span style=" color:red;">', '</span>') ?></label>
+                            <select required <?= $subtitle == 'view' ? 'disabled' : '' ?> class="col-md-10" name="physics_degree" id="physics_degree" multiple>
+                                <option value="A" <?= set_select('physics_degree', 'A', 
+                                isset($row) && isset($row['physics_degree']) && in_array('A', $row['physics_degree']) ? true : '')  ?>>
+                                A</option>
+                                <option value="B" <?= set_select('physics_degree', 'B', 
+                                isset($row) && isset($row['physics_degree']) && in_array('B', $row['physics_degree']) ? true : '')  ?>>
+                                B</option>
+                                <option value="C" <?= set_select('physics_degree', 'C', 
+                                isset($row) && isset($row['physics_degree']) && in_array('C', $row['physics_degree']) ? true : '')  ?>>
+                                C</option>
+                                <option value="D" <?= set_select('physics_degree', 'D', 
+                                isset($row) && isset($row['physics_degree']) && in_array('D', $row['physics_degree']) ? true : '')  ?>>
+                                D</option>
+                                <option value="E" <?= set_select('physics_degree', 'E', 
+                                isset($row) && isset($row['physics_degree']) && in_array('E', $row['physics_degree']) ? true : '')  ?>>
+                                E</option>
+                                <option value="F" <?= set_select('physics_degree', 'F', 
+                                isset($row) && isset($row['physics_degree']) && in_array('F', $row['physics_degree']) ? true : '')  ?>>
+                                F</option>
+                                <option value="OTHER"  <?= set_select('physics_degree', 'Other', 
+                                isset($row) && isset($row['physics_degree']) && in_array('Other', $row['physics_degree']) ? true : '')  ?>>
+                                Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <label for="chemistry_degree" class="col-md-2">Chemistry Degree <?= form_error('chemistry_degree', '<span style=" color:red;">', '</span>') ?></label>
+                            <select required <?= $subtitle == 'view' ? 'disabled' : '' ?> class="col-md-10" name="chemistry_degree" id="chemistry_degree" multiple>
+                                <option value="A" <?= set_select('chemistry_degree', 'A', 
+                                isset($row) && isset($row['chemistry_degree']) && in_array('A', $row['chemistry_degree']) ? true : '')  ?>>
+                                A</option>
+                                <option value="B" <?= set_select('chemistry_degree', 'B', 
+                                isset($row) && isset($row['chemistry_degree']) && in_array('B', $row['chemistry_degree']) ? true : '')  ?>>
+                                B</option>
+                                <option value="C" <?= set_select('chemistry_degree', 'C', 
+                                isset($row) && isset($row['chemistry_degree']) && in_array('C', $row['chemistry_degree']) ? true : '')  ?>>
+                                C</option>
+                                <option value="D" <?= set_select('chemistry_degree', 'D', 
+                                isset($row) && isset($row['chemistry_degree']) && in_array('D', $row['chemistry_degree']) ? true : '')  ?>>
+                                D</option>
+                                <option value="E" <?= set_select('chemistry_degree', 'E', 
+                                isset($row) && isset($row['chemistry_degree']) && in_array('E', $row['chemistry_degree']) ? true : '')  ?>>
+                                E</option>
+                                <option value="F" <?= set_select('chemistry_degree', 'F', 
+                                isset($row) && isset($row['chemistry_degree']) && in_array('F', $row['chemistry_degree']) ? true : '')  ?>>
+                                F</option>
+                                <option value="OTHER"  <?= set_select('chemistry_degree', 'Other', 
+                                isset($row) && isset($row['chemistry_degree']) && in_array('Other', $row['chemistry_degree']) ? true : '')  ?>>
+                                Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <label for="islamic_degree" class="col-md-2">Islamic Degree <?= form_error('islamic_degree', '<span style=" color:red;">', '</span>') ?></label>
+                            <select required <?= $subtitle == 'view' ? 'disabled' : '' ?> class="col-md-10" name="islamic_degree" id="islamic_degree" multiple>
+                                <option value="A" <?= set_select('islamic_degree', 'A', 
+                                isset($row) && isset($row['islamic_degree']) && in_array('A', $row['islamic_degree']) ? true : '')  ?>>
+                                A</option>
+                                <option value="B" <?= set_select('islamic_degree', 'B', 
+                                isset($row) && isset($row['islamic_degree']) && in_array('B', $row['islamic_degree']) ? true : '')  ?>>
+                                B</option>
+                                <option value="C" <?= set_select('islamic_degree', 'C', 
+                                isset($row) && isset($row['islamic_degree']) && in_array('C', $row['islamic_degree']) ? true : '')  ?>>
+                                C</option>
+                                <option value="D" <?= set_select('islamic_degree', 'D', 
+                                isset($row) && isset($row['islamic_degree']) && in_array('D', $row['islamic_degree']) ? true : '')  ?>>
+                                D</option>
+                                <option value="E" <?= set_select('islamic_degree', 'E', 
+                                isset($row) && isset($row['islamic_degree']) && in_array('E', $row['islamic_degree']) ? true : '')  ?>>
+                                E</option>
+                                <option value="F" <?= set_select('islamic_degree', 'F', 
+                                isset($row) && isset($row['islamic_degree']) && in_array('F', $row['islamic_degree']) ? true : '')  ?>>
+                                F</option>
+                                <option value="OTHER"  <?= set_select('islamic_degree', 'Other', 
+                                isset($row) && isset($row['islamic_degree']) && in_array('Other', $row['islamic_degree']) ? true : '')  ?>>
+                                Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <label for="arabic_degree" class="col-md-2">Arabic Degree <?= form_error('arabic_degree', '<span style=" color:red;">', '</span>') ?></label>
+                            <select required <?= $subtitle == 'view' ? 'disabled' : '' ?> class="col-md-10" name="arabic_degree" id="arabic_degree" multiple>
+                                <option value="A" <?= set_select('arabic_degree', 'A', 
+                                isset($row) && isset($row['arabic_degree']) && in_array('A', $row['arabic_degree']) ? true : '')  ?>>
+                                A</option>
+                                <option value="B" <?= set_select('arabic_degree', 'B', 
+                                isset($row) && isset($row['arabic_degree']) && in_array('B', $row['arabic_degree']) ? true : '')  ?>>
+                                B</option>
+                                <option value="C" <?= set_select('arabic_degree', 'C', 
+                                isset($row) && isset($row['arabic_degree']) && in_array('C', $row['arabic_degree']) ? true : '')  ?>>
+                                C</option>
+                                <option value="D" <?= set_select('arabic_degree', 'D', 
+                                isset($row) && isset($row['arabic_degree']) && in_array('D', $row['arabic_degree']) ? true : '')  ?>>
+                                D</option>
+                                <option value="E" <?= set_select('arabic_degree', 'E', 
+                                isset($row) && isset($row['arabic_degree']) && in_array('E', $row['arabic_degree']) ? true : '')  ?>>
+                                E</option>
+                                <option value="F" <?= set_select('arabic_degree', 'F', 
+                                isset($row) && isset($row['arabic_degree']) && in_array('F', $row['arabic_degree']) ? true : '')  ?>>
+                                F</option>
+                                <option value="OTHER"  <?= set_select('arabic_degree', 'Other', 
+                                isset($row) && isset($row['arabic_degree']) && in_array('Other', $row['arabic_degree']) ? true : '')  ?>>
+                                Other</option>
+                            </select>
+                        </div>
