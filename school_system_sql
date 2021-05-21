@@ -1,0 +1,175 @@
+CREATE TABLE site_options (
+    aut_id int NOT NULL AUTO_INCREMENT,
+    site_data varchar(255),
+    value varchar(255),
+    PRIMARY KEY (aut_id)
+);
+
+CREATE TABLE `sysytem_users` (
+  `aut_id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `group` varchar(255) DEFAULT NULL,
+  `profile_pic` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`aut_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+
+CREATE TABLE `sysytem_logs` 
+( `aut_id` int(11) NOT NULL AUTO_INCREMENT, `created_by` varchar(255) DEFAULT NULL, 
+`created_on_str` varchar(255) DEFAULT NULL, `ip` varchar(255) DEFAULT NULL, 
+`transaction_type` varchar(255) DEFAULT NULL, `details` varchar(255) DEFAULT NULL, 
+`platform` varchar(255) DEFAULT NULL, `browser` varchar(255) DEFAULT NULL, 
+`agent_string` varchar(255) DEFAULT NULL, PRIMARY KEY (`aut_id`) 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+
+CREATE TABLE `courses` (
+  `aut_id` int(11) NOT NULL AUTO_INCREMENT,
+  `course_id` varchar(255) DEFAULT NULL,
+  `course_name` varchar(255) DEFAULT NULL,
+  `period` varchar(255) DEFAULT NULL,
+  `faculty` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`aut_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+
+CREATE TABLE `students` (
+  `aut_id` int(11) NOT NULL AUTO_INCREMENT,
+  `student_id` varchar(255) DEFAULT NULL,
+  `first_name` varchar(255) DEFAULT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `gender` varchar(255) DEFAULT NULL,
+  `birth_date` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `profile_pic` varchar(255) DEFAULT NULL,
+  `nationality` varchar(255) DEFAULT NULL,
+  `admission_date` timestamp,
+  `course` varchar(255) DEFAULT NULL,
+  `academic_year` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`aut_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+
+CREATE TABLE `student_documents` (
+  `aut_id` int(11) NOT NULL AUTO_INCREMENT,
+  `student_id` varchar(255) DEFAULT NULL,
+  `national_id_no` varchar(255) DEFAULT NULL,
+  `national_id_doc_name` varchar(255) DEFAULT NULL,
+  `high_school_cert_no` varchar(255) DEFAULT NULL,
+  `high_school_cert_doc_name` varchar(255) DEFAULT NULL,
+  `birth_certificate_no` varchar(255) DEFAULT NULL,
+  `birth_certificate_doc_name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`aut_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+
+
+CREATE TABLE `high_school_data` (
+  `aut_id` int(11) NOT NULL AUTO_INCREMENT,
+  `student_id` varchar(255) DEFAULT NULL,
+  `school_name` varchar(255) DEFAULT NULL,
+  `math_degree` varchar(255) DEFAULT NULL,
+  `english_degree` varchar(255) DEFAULT NULL,
+  `physics_degree` varchar(255) DEFAULT NULL,
+  `chemistry_degree` varchar(255) DEFAULT NULL,
+  `biology_degree` varchar(255) DEFAULT NULL,
+  `total` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`aut_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+
+CREATE TABLE `sysytem_group_permissions` ( 
+`aut_id` int(11) NOT NULL AUTO_INCREMENT, 
+`sys_perm` varchar(255) DEFAULT NULL, 
+`sys_group` varchar(255) DEFAULT NULL, 
+PRIMARY KEY (`aut_id`) 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+
+CREATE TABLE `sysytem_permissions` ( 
+`aut_id` int(11) NOT NULL AUTO_INCREMENT, 
+`content_type` varchar(255) DEFAULT NULL, 
+`permission` varchar(255) DEFAULT NULL, PRIMARY KEY (`aut_id`) 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+
+CREATE TABLE `sysytem_user_groups` ( 
+`aut_id` int(11) NOT NULL AUTO_INCREMENT, 
+`sys_user` varchar(255) DEFAULT NULL, 
+`sys_group` varchar(255) DEFAULT NULL, 
+PRIMARY KEY (`aut_id`) 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+
+INSERT INTO `site_options` (`aut_id`, `site_data`, `value`) 
+VALUES ('1', 'favicon', 'assets/images/favicon/school_favicon.png'),
+('2', 'site_name', 'OMG STUDENT SYSTEM'), 
+('3', 'logo', 'assets/images/logo/logo.png');
+
+INSERT INTO `sysytem_permissions` (`aut_id`, `content_type`, `permission`) VALUES 
+('1', 'courses', 'can_view_courses'),
+('2', 'courses', 'can_add_courses'), 
+('3', 'courses', 'can_update_courses'),
+('4', 'courses', 'can_delete_courses'),
+('5', 'students', 'can_view_students'),
+('6', 'students', 'can_add_students'), 
+('7', 'students', 'can_update_students'),
+('8', 'students', 'can_delete_students'),
+('9', 'high_school_data', 'can_view_high_school_data'),
+('10', 'high_school_data', 'can_add_high_school_data'), 
+('11', 'high_school_data', 'can_update_high_school_data'),
+('12', 'high_school_data', 'can_delete_high_school_data'),
+('13', 'student_documents', 'can_view_student_documents'),
+('14', 'student_documents', 'can_add_student_documents'), 
+('15', 'student_documents', 'can_update_student_documents'),
+('16', 'student_documents', 'can_delete_student_documents'),
+('17', 'sysytem_users', 'can_view_users'),
+('18', 'sysytem_users', 'can_add_users'), 
+('19', 'sysytem_users', 'can_update_users'),
+('20', 'sysytem_users', 'can_delete_users'),
+('21', 'sysytem_logs', 'can_view_sysytem_logs'),
+('22', 'sysytem_logs', 'can_delete_sysytem_logs');
+
+INSERT INTO `sysytem_group_permissions` (`aut_id`, `sys_perm`, `sys_group`) VALUES 
+('1', 'can_view_courses','admin'),
+('2', 'can_add_courses','admin'), 
+('3', 'can_update_courses','admin'),
+('4', 'can_delete_courses','admin'),
+('5', 'can_view_students','admin'),
+('6', 'can_add_students','admin'), 
+('7', 'can_update_students','admin'),
+('8', 'can_delete_students','admin'),
+('9', 'can_view_high_school_data','admin'),
+('10', 'can_add_high_school_data','admin'), 
+('11', 'can_update_high_school_data','admin'),
+('12', 'can_delete_high_school_data','admin'),
+('13', 'can_view_student_documents','admin'),
+('14', 'can_add_student_documents','admin'), 
+('15', 'can_update_student_documents','admin'),
+('16', 'can_delete_student_documents','admin'),
+('17', 'can_view_users','admin'),
+('18', 'can_add_users','admin'), 
+('19', 'can_update_users','admin'),
+('20', 'can_delete_users','admin'),
+('21', 'can_view_sysytem_logs','admin'),
+('22', 'can_delete_sysytem_logs','admin'),
+('23', 'can_view_courses','non_admin'),
+('24', 'can_view_students','non_admin'),
+('25', 'can_view_high_school_data','non_admin'),
+('26', 'can_view_student_documents','non_admin'),
+('27', 'can_view_courses','students'),
+('28', 'can_view_students','students'),
+('29', 'can_view_high_school_data','students'),
+('30', 'can_view_student_documents','students');
+
+INSERT INTO `sysytem_users` (`aut_id`, `user_name`,`email`, `password`,`sys_group`,`profile_pic`) VALUES 
+('1', 'regular_user','abc@gmail.com','123456','non_admin',''),
+('2', 'admin_user','abc1@gmail.com','12345','admin',''),
+('3', 'student_user','abc2@gmail.com','00000','students','');
+
+INSERT INTO `sysytem_users` (`aut_id`,`sys_user`,`sys_group`) VALUES 
+('1', 'regular_user','non_admin'),
+('2', 'admin_user','admin'),
+('3', 'student_user','students');
+
+
+ALTER TABLE `sysytem_logs`
+ADD COLUMN `target` varchar(225)
+
+ALTER TABLE students
+ADD COLUMN `password` varchar(225)
